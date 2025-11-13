@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Пламя 1812-го</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="paper" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="background-lattice" aria-hidden="true"></div>
+  <div class="frame-lines" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Основная навигация по эпохе">
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav__toggle-icon" aria-hidden="true"></span>
+      <span class="nav__toggle-text">Меню</span>
+    </button>
+    <div class="nav__links" id="primary-nav">
+      <a href="#archive">Архив</a>
+      <a href="словарь/index.html">Глоссарий</a>
+      <a href="#timeline">Хронология</a>
+      <a href="#facts">Факты</a>
+      <a href="#osovets">Эпизоды</a>
+      <a href="weapons/index.html">Вооружение</a>
+    </div>
+  </nav>
+  <div class="spacer" aria-hidden="true"></div>
+
+  <header class="hero" role="banner">
+    <div class="smoke" aria-hidden="true"></div>
+    <div class="fog" aria-hidden="true"></div>
+
+    <div class="stamp-logo" aria-hidden="true">Беларусь. 1812<br><span class="stamp-sub">Эпоха Наполеона</span></div>
+    
+    </div>
+
+    <div class="wrap reveal show">
+      <span class="badge">1812–1814 • Полевая хроника Беларуси</span>
+      <h1 aria-label="Беларусь в эпоху завоеваний Наполеона"><span id="typeTarget" class="type"></span></h1>
+      <p class="lead">
+        <span class="hero-highlight">Белорусские губернии пережили марш многотысячной армии, резкое изменение власти и рождение народного сопротивления — от Минска и Борисова до Полоцка и Сморгони.</span>
+      </p>
+      <a class="down" href="#stats">Смотреть хронику</a>
+    </div>
+  </header>
+
+<section id="intro" class="wrap reveal">
+  <article class="intro">
+    <p>Беларусь оказалась на линии удара Гранд-Армии летом 1812 года. Через Неман, Вильно и Минск прошли корпуса, несущие новый административный порядок, французские декреты и тяжелые реквизиции.</p>
+    <p>Города и местечка быстро сменили вывески: образовывались французские префектуры, возрождались надежды шляхты на возвращение автономии Великого княжества Литовского, а население платило налогами, лошадьми и хлебом.</p>
+    <p>Российские власти, отступая, вывозили склады и архивы, но оставляли инструкции для подполья, что вскоре вылилось в гибридную войну — рейды казаков, диверсии мостов, тайные сети священников и мещан.</p>
+    <p>Память об эпохе Наполеона в Беларуси — это рассказы о разорённых фольварках, о местных партизанах, о сожжённых мостах Березины и о возвращении империи уже с иной повесткой модернизации.</p>
+  </article>
+</section>
+
+<section id="intro" class="wrap reveal">
+  <article class="intro">
+    <p>К 1812 году население белорусских губерний едва восстановилось после предыдущих разделов Речи Посполитой. Войска Наполеона рассчитывали на местные ресурсы — до <strong>2&nbsp;миллионов пудов хлеба</strong> и тысячи подвод ежемесячно.</p>
+    <p>На протяжённых трактов от Гродно до Борисова строились магазины снабжения, где сосуществовали французские интенданты и шляхетские курульные суды. Любая задержка обозов означала голод и бунты.</p>
+    <p>Российская армия намеренно эвакуировала жителей, разрушала мельницы и мосты, заставляя французов тратить время и провиант. Так зародилась стратегия выжженной земли на белорусской территории.</p>
+  </article>
+</section>
+
+<section id="stats" class="wrap">
+  <div class="stats">
+    <article class="stat reveal" aria-label="Численность жителей, вовлечённых в войну 1812 года">
+      <h3>Жителей втянутых в войну</h3>
+      <div class="counter" data-target="950000">0</div>
+      <div class="sub">Солдаты, обозные, ремесленники и семьи, на которых легли постои обеих армий</div>
+    </article>
+
+    <article class="stat stele reveal" aria-label="Число беженцев и потерь мирного населения">
+      <h3>Потери и беженцы</h3>
+      <div class="counter" data-target="420000">0</div>
+      <div class="sub">Убитые, умершие от голода и эпидемий, а также переселённые за один год</div>
+      <div class="candles" aria-hidden="true">
+        <span class="candle"></span><span class="candle"></span><span class="candle"></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="timeline" class="timeline-bleed">
+  <div class="tl-head">
+    <h3>Хронология кампании 1812–1814</h3>
+    <div class="tl-ctrls">
+      <button class="tl-btn" id="tlPrev" aria-label="Прокрутить назад">&larr;</button>
+      <button class="tl-btn" id="tlNext" aria-label="Прокрутить вперёд">&rarr;</button>
+    </div>
+  </div>
+
+  <div class="year-scale">
+    <div><span class="dot"></span>1812</div>
+    <div><span class="dot"></span>Осень 1812</div>
+    <div><span class="dot"></span>Зима 1812/13</div>
+    <div><span class="dot"></span>1813</div>
+    <div><span class="dot"></span>1814</div>
+  </div>
+
+  <div class="timeline" role="region" aria-label="Лента событий 1812–1814">
+    <div class="ticks" id="tlTrack">
+      <article class="tick reveal" id="tl-1812-06-24-neman">
+        <a class="permalink" href="#tl-1812-06-24-neman" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">24 июня 1812</div>
+        <div><strong>Армия Наполеона форсирует Неман</strong><p>Через Ковно и Гродно в Беларусь входят главные силы Гранд-Армии, открывая кампанию.</p></div>
+        <figure class="media"><img src="images/1.webp" alt="Переправа через Неман"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-07-11-mir">
+        <a class="permalink" href="#tl-1812-07-11-mir" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">10–11 июля 1812</div>
+        <div><strong>Конные бои под Миром</strong><p>Лейб-гвардия литовских татар сталкивается с кавалерией П.С. Багратиона; первые успехи российской стороны.</p></div>
+        <figure class="media"><img src="images/2.webp" alt="Конная атака у Мира"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-07-16-minsk">
+        <a class="permalink" href="#tl-1812-07-16-minsk" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">16 июля 1812</div>
+        <div><strong>Даву занимает Минск</strong><p>Французские корпуса создают склады в Минске и Игумене, готовя переправы на Березине.</p></div>
+        <figure class="media"><img src="images/3.webp" alt="Оккупация Минска"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-08-17-polotsk">
+        <a class="permalink" href="#tl-1812-08-17-polotsk" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">17–18 августа 1812</div>
+        <div><strong>Первая битва при Полоцке</strong><p>Корпус Сен-Сира удерживает город, но линия на Двине превращается в позиционную борьбу.</p></div>
+        <figure class="media"><img src="images/4.webp" alt="Сражение за Полоцк"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-10-31-chashniki">
+        <a class="permalink" href="#tl-1812-10-31-chashniki" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">31 октября 1812</div>
+        <div><strong>Бой у Чашник</strong><p>Второе сражение при Полоцке заканчивается отходом французов и освобождением Витебского пути.</p></div>
+        <figure class="media"><img src="images/5.webp" alt="Чашники, конец октября"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-10-partisans">
+        <a class="permalink" href="#tl-1812-10-partisans" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">Осень 1812</div>
+        <div><strong>Партизанские округа</strong><p>Деташементы Дениса Давыдова, Чернышёва и местных повстанцев блокируют тракты к Борисову.</p></div>
+        <figure class="media"><img src="images/6.webp" alt="Партизаны на тракте"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-11-26-berezina">
+        <a class="permalink" href="#tl-1812-11-26-berezina" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">26–29 ноября 1812</div>
+        <div><strong>Переправа через Березину</strong><p>Наполеон прорывается у Студёнки; мосты строят под огнём, а берега заполнены беженцами.</p></div>
+        <figure class="media"><img src="images/7.webp" alt="Березина, строительство мостов"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1812-12-05-smorgon">
+        <a class="permalink" href="#tl-1812-12-05-smorgon" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">5 декабря 1812</div>
+        <div><strong>Сморгонь: Наполеон покидает армию</strong><p>Император передает командование Мюрату и тайно выезжает в Париж через Вильно.</p></div>
+        <figure class="media"><img src="images/8.webp" alt="Сморгонь, ставка Наполеона"></figure>
+      </article>
+
+      <article class="tick reveal" id="tl-1813-02-minsk">
+        <a class="permalink" href="#tl-1813-02-minsk" aria-label="Скопировать ссылку на событие">#</a>
+        <div class="when">Февраль 1813</div>
+        <div><strong>Возвращение имперской администрации</strong><p>Минская, Витебская и Гродненская губернии получают временные правления, восстанавливаются магистраты.</p></div>
+        <figure class="media"><img src="images/9.webp" alt="Минск после освобождения"></figure>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="archive" class="wrap reveal">
+  <div class="archive">
+    <header class="archive-head">
+      <h2>Архив</h2>
+      <p>Здесь собраны дневники, карты и донесения, рассказывающие о белорусских землях в эпоху завоеваний Наполеона.</p>
+      <p>Документы дают голос крестьянам, шляхте и офицерам, пережившим резкую смену власти.</p>
+    </header>
+    <div class="archive-grid" role="list">
+      <article class="archive-item" role="article">
+        <div class="cover" aria-hidden="true">
+          <img src="images/archive/1.jpg" alt="Дневник минского купца" loading="lazy">
+        </div>
+        <div class="archive-body">
+          <h3>Дневник минского купца</h3>
+          <p>Записи Иосифа Езерского о реквизициях, стоимости соли и появлении французских комиссаров летом 1812 года.</p>
+          <div class="archive-actions">
+            <a class="archive-btn download" href="1.pdf" download>Скачать</a>
+            <a class="archive-btn read" href="1.pdf" target="_blank" rel="noopener">Читать</a>
+          </div>
+        </div>
+      </article>
+      <article class="archive-item" role="article">
+        <div class="cover" aria-hidden="true">
+          <img src="images/archive/2.webp" alt="Карта белорусских трактов" loading="lazy">
+        </div>
+        <div class="archive-body">
+          <h3>Карта реквизиционных округов</h3>
+          <p>Документ штаба Саксонского корпуса: где собирали фураж, как делили Беларусь на районы снабжения.</p>
+          <div class="archive-actions">
+            <a class="archive-btn download" href="2.pdf" download>Скачать</a>
+            <a class="archive-btn read" href="2.pdf" target="_blank" rel="noopener">Читать</a>
+          </div>
+        </div>
+      </article>
+      <article class="archive-item" role="article">
+        <div class="cover" aria-hidden="true">
+          <img src="images/archive/3.webp" alt="Письма участников Березины" loading="lazy">
+        </div>
+        <div class="archive-body">
+          <h3>Письма с Березины</h3>
+          <p>Воспоминания сапёров и мещан Борисова о строительстве мостов и судьбе жителей в ноябре 1812 года.</p>
+          <div class="archive-actions">
+            <a class="archive-btn download" href="3.pdf" download>Скачать</a>
+            <a class="archive-btn read" href="3.pdf" target="_blank" rel="noopener">Читать</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="facts" class="wrap">
+  <h3 style="margin:0 0 10px;">Факты об эпохе Наполеона в Беларуси</h3>
+  <div class="facts reveal">
+    <div class="fact">
+      <h4>Новая администрация</h4>
+      <p>Французские префектуры делили Беларусь на департаменты и <span class="gloss">кантоны</span>, вводя французские суды и рекрутские списки.</p>
+    </div>
+    <div class="fact">
+      <h4>Экономический надлом</h4>
+      <p>Складские запасы и мануфактуры либо вывозили, либо передавали французским интендантам, что парализовало поставки Петербургу.</p>
+    </div>
+    <div class="fact">
+      <h4>Сопротивление</h4>
+      <p><span class="gloss">Партизанские отряды</span> формировали казаки, шляхта и крестьяне; они нападали на обозы и жгли мосты.</p>
+    </div>
+    <div class="fact">
+      <h4>Березина</h4>
+      <p><span class="gloss">Березина</span> стала символом трагедии всех армий: тысячи беженцев, гибель обозов и героизм сапёров.</p>
+    </div>
+    <div class="fact">
+      <h4>Военная служба</h4>
+      <p>Местные <span class="gloss">линейные полки</span> и полки национальной гвардии ВКЛ сменяли присягу дважды за один год.</p>
+    </div>
+    <div class="fact">
+      <h4>Наследие</h4>
+      <p>После 1814 года империя сохранила часть французских реформ: кадастр, новые школы, опыт взаимодействия с шляхтой.</p>
+    </div>
+  </div>
+</section>
+
+<section id="osovets" class="wrap">
+  <article class="osovets reveal">
+    <h3>Березина. Ноябрь 1812</h3>
+    <p class="sub">Переправа у Студёнки — это инженерная драма и человеческая катастрофа, определившая исход кампании.</p>
+    <p>Белорусские мостостроители, сапёры Эбле и местные жители под огнём собирали настил, чтобы вывести остатки армии и беженцев.</p>
+    <div class="gasline" aria-hidden="true"></div>
+    <p class="osovets__link" style="margin-top:12px"><a href="ocovec/osovec.html"><strong>Разбор переправы</strong></a></p>
+  </article>
+</section>
+
+<section id="heroes" class="wrap">
+  <h3 style="margin:0 0 8px;">Лица эпохи</h3>
+  <p class="sub" style="margin-bottom:16px">Кто определял судьбу белорусских земель</p>
+
+  <div class="heroes reveal" role="list">
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h1">
+      <img class="avatar" src="images/heroes/Strzeminski.webp" alt="Доминик Радзивилл">
+      <div class="hero-name">Доминик Радзивилл</div>
+      <div class="hero-meta">Маршалок литовской гвардии, союзник Наполеона</div>
+      <p class="hero-desc">Возглавил временное правительство ВКЛ, создал батальоны национальной гвардии и пытался удержать порядок в Вильно.</p>
+    </article>
+
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h2">
+      <img class="avatar" src="images/heroes/kotlinskij_3.webp" alt="Ян Домбровский">
+      <div class="hero-name">Ян Домбровский</div>
+      <div class="hero-meta">Генерал армии Герцогства Варшавского</div>
+      <p class="hero-desc">Его корпус шел через Новогрудок и Несвиж, поддерживая связь между великим и северным корпусами.</p>
+    </article>
+
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h3">
+      <img class="avatar" src="images/heroes/gurko.webp" alt="Пётр Багратион">
+      <div class="hero-name">Пётр Багратион</div>
+      <div class="hero-meta">Командующий 2-й армией</div>
+      <p class="hero-desc">Сражения у Мира и Смоленска начались с его манёвров по белорусским дорогам и прикрыли отход к Москве.</p>
+    </article>
+
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h4">
+      <img class="avatar" src="images/heroes/Kaygorodov.webp" alt="Денис Давыдов">
+      <div class="hero-name">Денис Давыдов</div>
+      <div class="hero-meta">Партизанский командир</div>
+      <p class="hero-desc">Организовал рейды по Минскому и Борисовскому уездам, разрушая французские конвои и склады.</p>
+    </article>
+
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h5">
+      <img class="avatar" src="images/heroes/chernyshev.webp" alt="Александр Чернышёв">
+      <div class="hero-name">Александр Чернышёв</div>
+      <div class="hero-meta">Командир летучих отрядов</div>
+      <p class="hero-desc">Его кавалеристы контролировали тракты на Березину, первыми сообщили о подготовке переправы в Студёнке.</p>
+    </article>
+
+    <article class="card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="heroModal" data-id="h6">
+      <img class="avatar" src="images/heroes/Ragoza.webp" alt="Яков Кульнев">
+      <div class="hero-name">Яков Кульнев</div>
+      <div class="hero-meta">Генерал-майор, герой Клястиц</div>
+      <p class="hero-desc">Командовал передовыми отрядами у Дисны, погиб в бою, остановив продвижение французов к Полоцку.</p>
+    </article>
+  </div>
+</section>
+
+<section class="wrap">
+  <h3 style="margin:0 0 8px;">Вопросы и ответы</h3>
+  <div class="acc reveal">
+    <details class="q">
+      <summary>Что означал декрет о кантонной гвардии?</summary>
+      <div class="a">Он создавал локальные части обороны из дворян и горожан, чтобы удерживать порядок в тылу Наполеона.</div>
+    </details>
+    <details class="q">
+      <summary>Почему Борисов стал узлом операций?</summary>
+      <div class="a">Город контролировал переправы через Березину и обеспечивал связь с Минском и Сморгонью.</div>
+    </details>
+    <details class="q">
+      <summary>Кто первым сообщил о планах переправы?</summary>
+      <div class="a">Отряды Чернышёва и местные крестьяне предупредили штаб Чичагова о движении французов к Студёнке.</div>
+    </details>
+    <details class="q">
+      <summary>Как белорусские города пережили смену власти?</summary>
+      <div class="a">В Минске и Гродно оставались французские гарнизоны, но суды и ремесленные цехи быстро вернули царские печати.</div>
+    </details>
+    <details class="q">
+      <summary>Какие налоги взимали оккупационные власти?</summary>
+      <div class="a">Продовольственная десятина, контрибуции в серебре и подводные повинности для снабжения корпусов.</div>
+    </details>
+    <details class="q">
+      <summary>Что изменилось после 1814 года?</summary>
+      <div class="a">Сочетание имперских реформ и опыта войны привело к созданию новых гимназий и восстановлению шляхетского самоуправления на местном уровне.</div>
+    </details>
+  </div>
+</section>
+
+<section id="chronicles" class="wrap">
+  <div class="chronicles reveal">
+    <div class="chronicles-head">
+      <h3>Визуальные хроники</h3>
+      <p class="sub">Белорусские ландшафты войны</p>
+    </div>
+    <div class="chronicles-grid" role="list">
+      <figure class="chronicles-item" role="listitem">
+        <img src="images/chronicles/1.webp" alt="Минск и французские постои">
+        <figcaption>Минская ратуша и французские караулы у склада фуража.</figcaption>
+      </figure>
+      <figure class="chronicles-item" role="listitem">
+        <img src="images/chronicles/2.webp" alt="Борисовский мост">
+        <figcaption>Берега Березины перед поджогом мостов и строительством настила.</figcaption>
+      </figure>
+      <figure class="chronicles-item" role="listitem">
+        <img src="images/chronicles/3.webp" alt="Сморгонская ставка">
+        <figcaption>Ставка Наполеона в Сморгони, откуда он уехал в Париж.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Проект о Беларуси в эпоху Наполеона • подготовлено в Минске и Вильне • 2025
+
+  <div class="ticker" role="region" aria-label="Лента ключевых событий 1812–1814">
+    <div class="label">Сводка</div>
+    <div class="viewport">
+      <div class="track" id="tickerTrack">
+        <div class="item">24 июня 1812 — Наполеон переходит Неман</div><span class="dot"></span>
+        <div class="item">16 июля 1812 — Минск занят корпусом Даву</div><span class="dot"></span>
+        <div class="item">17 августа 1812 — Первая битва при Полоцке</div><span class="dot"></span>
+        <div class="item">31 октября 1812 — Чашницкое сражение</div><span class="dot"></span>
+        <div class="item">26–29 ноября 1812 — Переправа через Березину</div><span class="dot"></span>
+        <div class="item">5 декабря 1812 — Наполеон покидает Сморгонь</div><span class="dot"></span>
+        <div class="item">Февраль 1813 — Возвращение российской администрации</div><span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="heroModal" aria-labelledby="heroTitle">
+  <div class="modal-head">
+    <div class="modal-title" id="heroTitle">Имя</div>
+    <button class="modal-close" id="heroClose" type="button" aria-label="Закрыть окно">Закрыть</button>
+  </div>
+  <div class="modal-body">
+    <img id="heroImg" src="" alt="">
+    <div>
+      <div class="meta" id="heroMeta"></div>
+      <p class="bio" id="heroBio"></p>
+    </div>
+  </div>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script type="module" src="js/main.module.js"></script>
+</body>
+</html>
